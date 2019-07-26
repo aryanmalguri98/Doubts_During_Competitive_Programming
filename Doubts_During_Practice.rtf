@@ -1,0 +1,788 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang2057{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}}
+{\*\generator Riched20 10.0.16299}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs96\lang9 DOUBTs DuRing Practice:\par
+\fs32 1.srand(time(NULL)) should be run exactly once to intialise the PRNG. Do this in Main when the application starts. Explanation: A PRNG (Pseudo-Random Number Generator) generates a deterministic sequence of numbers dependent on the algorithm used.To fix this you need to seed the PRNG yourself with a different seed (to give a different sequence) each time the application is run. The usual approach is to use time(NULL) which sets the seed based on the current time. As long as you don't start two instances of the application within a second of each other, you'll be guaranteed a different random sequence.\par
+2.INT_MIN and INT_MAX are nothing but minimum and maximum value of an integer . if you write. INT_MIN x; Then it means x having smallest value in your program \par
+3.It requires a pointer to the array, the number of elements in the array, the size of each element and a comparator function. We have discussed qsort comparator in detail here. C++ Standard Library provides a similar function sort() that originated in the STL.\par
+4.const void * const pMem. It is a constant pointer to a constant type of void. The void pointer is a generic pointer type that can be set to point to any object. It is often used in C to allow the address of unknown objects to be passed to a function. For example, think of memcpy that uses this pointer type.\par
+5.sort(vec.begin(), vec.end(),[](const string& a, const string& b)\{\par
+\tab\tab return a.length() < b.length() || a.length() == b.length() && a < b;\par
+\tab\});\par
+6.for(auto& s: vec)\par
+\tab\tab cout << s << '\\n';\par
+7. int integer_num = stoi(s1[i]);\par
+8.\par
+DATA TYPE\tab SIZE (IN BYTES)\tab RANGE\par
+short int\tab 2\tab -32,768 to 32,767\par
+unsigned short int\tab 2\tab 0 to 65,535\par
+unsigned int\tab 4\tab 0 to 4,294,967,295\par
+int\tab 4\tab -2,147,483,648 to 2,147,483,647\par
+long int\tab 4\tab -2,147,483,648 to 2,147,483,647\par
+unsigned long int\tab 4\tab 0 to 4,294,967,295\par
+long long int\tab 8\tab -(2^63) to (2^63)-1\par
+unsigned long long int\tab 8\tab 0 to 18,446,744,073,709,551,615\par
+signed char\tab 1\tab -128 to 127\par
+unsigned char\tab 1\tab 0 to 255\par
+float\tab 4\tab\par
+double\tab 8\tab\par
+long double\tab 12\tab\par
+wchar_t\tab 2 or 4\tab 1 wide character\par
+9.atoi() : The atoi() function takes a character array or string literal as an argument and returns its value. Following is a simple implementation:\par
+\par
+filter_none\par
+// For C++11 above \par
+#include <iostream> \par
+#include <cstdlib> \par
+using namespace std; \par
+   \par
+int main() \par
+\{ \par
+    const char *str1 = "42"; \par
+    const char *str2 = "3.14159"; \par
+    const char *str3 = "31337 geek"; \par
+     \par
+    int num1 = atoi(str1); \par
+    int num2 = atoi(str2); \par
+    int num3 = atoi(str3); \par
+    \par
+    cout << "atoi(\\"" << str1  \par
+              << "\\") is " << num1 << '\\n'; \par
+    cout << "atoi(\\"" << str2  \par
+              << "\\") is " << num2 << '\\n'; \par
+    cout << "atoi(\\"" << str3  \par
+              << "\\") is " << num3 << '\\n'; \par
+     \par
+   return 0; \par
+\} \par
+10. if(s[i] != s[i+1]) v_vector[i] = s[i] - '0'\par
+string con_sub = s.substr(i, cnt);\par
+11.#include<bits/stdc++.h> \par
+  \par
+int main () \par
+\{ \par
+    std::vector<int> vec \{ 10, 20, 30, 40 \}; \par
+      \par
+    // Iterator used to store the position  \par
+    // of searched element \par
+    std::vector<int>::iterator it; \par
+      \par
+    // Print Original Vector \par
+    std::cout << "Original vector :"; \par
+    for (int i=0; i<vec.size(); i++) \par
+        std::cout << " " << vec[i]; \par
+          \par
+    std::cout << "\\n"; \par
+      \par
+    // Element to be searched \par
+    int ser = 30; \par
+      \par
+    // std::find function call \par
+    it = std::find (vec.begin(), vec.end(), ser); \par
+    if (it != vec.end()) \par
+    \{ \par
+        std::cout << "Element " << ser <<" found at position : " ; \par
+        std:: cout << it - vec.begin() + 1 << "\\n" ; \par
+    \} \par
+    else\par
+        std::cout << "Element not found.\\n\\n"; \par
+          \par
+    return 0; \par
+\} \par
+12.if(s.substr(i,1)=="H" || s.substr(i,1)=="Q" || s.substr(i,1)=="9")\par
+x1=str.find("h");\par
+\tab str=str.substr(x1+1);\par
+const int N = 100010;\par
+mx = max(mx, i - j + 1);\par
+13.sort(a, a+n+n);\par
+\tab double need = min(a[0]*1.0 , a[n]/2.0);\par
+\tab need = min(need , w*1.0/(3*n));\par
+14.printf("%.10lf\\n", 3*n*need);\par
+15.inline void fun(int n, ll m) \{\par
+    l = 0, r = n-1;\par
+    for(int i=1, j=n-2 ; i<n ; --j, ++i)\{\par
+        if(m <= (1ll << j)) a[l++] = i;\par
+        else \{\par
+            m -= (1ll << j);\par
+            a[r--] = i;\par
+        \}\par
+    \}\par
+    a[l] = n;\par
+    for(int i=0 ; i<n ; ++i) cout << a[i] << " " ; cout << endl;\par
+\}\par
+typedef long long ll;\par
+16.prv.reserve(1024);\par
+    prv.max_load_factor(0.25);\par
+    ans.reserve(1024);\par
+    ans.max_load_factor(0.25);\par
+17.int gcd(int a, int b) \{\par
+    return b ? gcd(b, a%b) : a;\par
+18.if(X && Y) return puts("0");\par
+\tab if(X ^ Y) return !printf("1\\n%d\\n", X ? y : x);\par
+19.X |= binary_search(a, a+n, a[i] + x);\par
+20.\par
+\tab printf("2\\n%d %d\\n", x, y)\par
+21.for(int _y, i=0 ; i<n ; ++i) \{\par
+\tab\tab if(a[i] >= y) \{\par
+\tab\tab\tab _y = a[i] - y;\par
+\tab\tab\tab if(binary_search(a, a+n, _y - x) || binary_search(a, a+n, _y + x)) return !printf("1\\n%d\\n", _y);\par
+\tab\tab\}\par
+\tab\tab if(a[i] + y <= l) \{\par
+\tab\tab\tab _y = y + a[i];\par
+\tab\tab\tab if(binary_search(a, a+n, _y - x) || binary_search(a, a+n, _y + x)) return !printf("1\\n%d\\n", _y);\par
+\tab\tab\}\par
+\tab\}\par
+22.int main(int argc, char **argv) \{\par
+#ifndef ONLINE_JUDGE\par
+\tab freopen("a.in", "r", stdin);\par
+#endif\par
+23.idx = upper_bound(costOnly[tmp].begin(), costOnly[tmp].end(), tmpH) - costOnly[tmp].begin();\par
+24.v >>= 1;\par
+25.for(int j=0 ; j<(int)sorted[i].size() ; ++j)\par
+26.memset(last_leave, -1, sizeof last_leave);\par
+27.int main(int argc, char **argv) \{\par
+#ifndef ONLINE_JUDGE\par
+\tab freopen("a.in", "r", stdin);\par
+#endif\par
+28.bitset<N> help, ans;\par
+for(int i=1 ; i<=n ; ++i) ans.set(i);\par
+29.if(!(i == m-1 || (p[i+1].f == '+' && p[i+1].se == p[i].se))) ans.set(p[i].se, 0);\par
+30. pair<int, int>pair1 = make_pair(1, 12); \par
+    pair<int, int>pair2 = make_pair(9, 12); \par
+31.\par
+struct student \{\par
+\tab int l, c, idx;\par
+\tab student(int L = 0, int C = 0, int I = 0) \{\par
+\tab\tab l = L, c = C, idx = I;\par
+\tab\}\par
+\tab bool operator<(const student &o) const \{\par
+\tab\tab return l < o.l;\par
+\tab 31.priority_queue<pair<int, int> > q;\par
+\tab for (int i = 0, j = n - 1; i < m; i += mid) \{\par
+\tab\tab while (j >= 0) \{\par
+\tab\tab\tab if (st[j].l >= b[i].first) \{\par
+\tab\tab\tab\tab q.push(make_pair(-st[j].c, j));\par
+\tab\tab\tab\tab --j;\par
+32.sort(b, b + m, greater<pair<int, int> >());\par
+\tab sort(st, st + n);\par
+33.#include<bits/stdc++.h>\par
+#define f first\par
+#define s second\par
+#define l (p << 1)\par
+#define r (p << 1 | 1)\par
+#define mid ((x+y) >> 1)\par
+\fs22 int n, m, c, B[N], stu[N], st[N << 2], res[N];\par
+34.idx = lower_bound(ss, ss + n, student(b[i].f, -1, -1)) - ss;\fs48\par
+\fs36 34.ss[min_id].need = 2e9;\par
+for(int tmp, j=0, i=0 ; i<m ; ++j) \{\par
+\tab\tab tmp = ans;\par
+\tab\tab while(tmp-- && i<m) \{\par
+\tab\tab\tab res[b[i].s] = ss[v[j]].idx;\par
+\tab\tab\tab ++i;\par
+\tab\tab\}\par
+\tab\}\par
+35. result.push_back(make_pair(i * (k+1), j * (((k + 1) % 2) + 1)));\par
+36.INT_MAX is a macro that expands to the largest (most positive) value that can be stored in an int . On most processors INT_MIN == -INT_MAX - 1 , i.e., there is one more negative number than positive number in the range of legal values. For unsigned int , the corresponding values are 0 and UINT_MAX .\par
+maximum value of int: 2147483647\par
+minimum value of int: -2147483648\par
+37.#include <iterator> \par
+#include <map> \par
+  \par
+using namespace std; \par
+  \par
+int main() \par
+\{ \par
+  \par
+    // empty map container \par
+    map<int, int> gquiz1; \par
+  \par
+    // insert elements in random order \par
+    gquiz1.insert(pair<int, int>(1, 40)); \par
+    gquiz1.insert(pair<int, int>(2, 30)); \par
+    gquiz1.insert(pair<int, int>(3, 60)); \par
+    gquiz1.insert(pair<int, int>(4, 20)); \par
+    gquiz1.insert(pair<int, int>(5, 50)); \par
+    gquiz1.insert(pair<int, int>(6, 50)); \par
+    gquiz1.insert(pair<int, int>(7, 10)); \par
+  \par
+    // printing map gquiz1 \par
+    map<int, int>::iterator itr; \par
+    cout << "\\nThe map gquiz1 is : \\n"; \par
+    cout << "\\tKEY\\tELEMENT\\n"; \par
+    for (itr = gquiz1.begin(); itr != gquiz1.end(); ++itr) \{ \par
+        cout << '\\t' << itr->first \par
+             << '\\t' << itr->second << '\\n'; \par
+    \} \par
+    cout << endl; \par
+  \par
+    // assigning the elements from gquiz1 to gquiz2 \par
+    map<int, int> gquiz2(gquiz1.begin(), gquiz1.end()); \par
+  \par
+    // print all elements of the map gquiz2 \par
+    cout << "\\nThe map gquiz2 after"\par
+         << " assign from gquiz1 is : \\n"; \par
+    cout << "\\tKEY\\tELEMENT\\n"; \par
+    for (itr = gquiz2.begin(); itr != gquiz2.end(); ++itr) \{ \par
+        cout << '\\t' << itr->first \par
+             << '\\t' << itr->second << '\\n'; \par
+    \} \par
+    cout << endl; \par
+  \par
+    // remove all elements up to \par
+    // element with key=3 in gquiz2 \par
+    cout << "\\ngquiz2 after removal of"\par
+            " elements less than key=3 : \\n"; \par
+    cout << "\\tKEY\\tELEMENT\\n"; \par
+    gquiz2.erase(gquiz2.begin(), gquiz2.find(3)); \par
+    for (itr = gquiz2.begin(); itr != gquiz2.end(); ++itr) \{ \par
+        cout << '\\t' << itr->first \par
+             << '\\t' << itr->second << '\\n'; \par
+    \} \par
+  \par
+    // remove all elements with key = 4 \par
+    int num; \par
+    num = gquiz2.erase(4); \par
+    cout << "\\ngquiz2.erase(4) : "; \par
+    cout << num << " removed \\n"; \par
+    cout << "\\tKEY\\tELEMENT\\n"; \par
+    for (itr = gquiz2.begin(); itr != gquiz2.end(); ++itr) \{ \par
+        cout << '\\t' << itr->first \par
+             << '\\t' << itr->second << '\\n'; \par
+    \} \par
+  \par
+    cout << endl; \par
+  \par
+    // lower bound and upper bound for map gquiz1 key = 5 \par
+    cout << "gquiz1.lower_bound(5) : "\par
+         << "\\tKEY = "; \par
+    cout << gquiz1.lower_bound(5)->first << '\\t'; \par
+    cout << "\\tELEMENT = "\par
+         << gquiz1.lower_bound(5)->second << endl; \par
+    cout << "gquiz1.upper_bound(5) : "\par
+         << "\\tKEY = "; \par
+    cout << gquiz1.upper_bound(5)->first << '\\t'; \par
+    cout << "\\tELEMENT = "\par
+         << gquiz1.upper_bound(5)->second << endl; \par
+  \par
+    return 0; \par
+\} \par
+38.Trying using HashMap. Retrivel of indices can be done in O(1).\par
+39. unsigned long long int calories = 0;\par
+  printf("%llu \\n", calories);--------(10^14 )\par
+40.   std::vector<int> arr(n);\par
+    for (auto& e : arr)\par
+        std::cin >> e;\par
+41.the largest possible value for type int is \par
+int diff = std::numeric_limits<int>::max();\par
+42. // Here if greater<int> is used to make \par
+    // sure that elements are stored in \par
+    // descending order of keys. \par
+    map<int, string, greater <int> > mymap;\par
+map<int,string> :: iterator it; \par
+    for (it=mymap.begin() ; it!=mymap.end() ; it++) \par
+        cout << "(" << (*it).first << ", "\par
+             << (*it).second << ")" << endl; \par
+43.Multimap is similar to map with an addition that multiple elements can have same keys. Rather than each element being unique, the key value and mapped value pair has to be unique in this case\par
+  // Here if greater<int> is used to make \par
+    // sure that elements are stored in \par
+    // descending order of keys. \par
+    multimap<int, string, greater <int> > mymap; \par
+44.v1[(int)(s[i]-48)]++;\par
+45.\par
+Category\tab Associativity\tab Operator\par
+Postfix\tab LR\tab ++ --\par
+Unary\tab RL\tab + - ! ~ ++ --\par
+Multiplicative\tab LR\tab * / %\par
+Additive\tab LR\tab + -\par
+Shift\tab LR\tab << >>\par
+Relational\tab LR\tab < <= > >=\par
+Equality\tab LR\tab == !=\par
+Bitwise AND\tab LR\tab &\par
+Bitwise XOR\tab LR\tab ^\par
+Bitwise OR\tab LR\tab |\par
+Logical AND\tab LR\tab &&\par
+Logical OR\tab LR\tab ||\par
+Conditional\tab RL\tab ?:\par
+Assignment\tab RL\tab = += -= *= /= %= >>= <<= &= ^= |=\par
+46.Make sure that i+k never exceeds N, because that will try to access a memory location which is not declared in . There's a simple trick to ensure that - use i+k mod N .\par
+47.65-90 ----->>>A-Z\par
+and\par
+97-122------->>> a-z\par
+48.The main difference between the two is in the way they encode the character and the number of bits that they use for each. ASCII originally used seven bits to encode each character. ... In contrast, Unicode uses a variable bit encoding program where you can choose between 32, 16, and 8-bit encodings.\par
+49.It seems that subtracting '0' from the char is casting it to an integer.\par
+Don't make the mistake of thinking that '0' == 0. In reality, '0' == 48\par
+50.vector<int>slot(T,-1)->that is initializing the vector of size T with -1\par
+51.for (const char& c : s) freq[c-'a']++;\par
+//character to an integer\par
+52. string s = "dog:cat"; \par
+  \par
+    // Find position of ':' using find() \par
+    int pos = s.find(":"); \par
+  \par
+    // Copy substring after pos \par
+    string sub = s.substr(pos + 1); \par
+  \par
+    // prints the result \par
+    cout << "String is: " << sub; \par
+  \par
+    return 0;\par
+53.setw() : Setting field width Using Cout in C++ Programming\par
+setw() is library function in C++.\par
+setw() is declared inside #include<iomanip>\par
+setw() will set field width.\par
+setw() sets the number of characters to be used as the field width for the next insertion operation.\par
+54.npos is a static member constant value with the greatest possible value for an element of type size_t. This value, when used as the value for a len (or sublen) parameter in string's member functions, means "until the end of the string". As a return value, it is usually used to indicate no matches.\par
+55.#include <iostream>\par
+#include <string>\par
+\par
+int main ()\par
+\{\par
+  std::string str("123");\par
+\par
+  int n = std::stoi(str);\par
+\par
+  std::cout << str << " --> " << n << std::endl;\par
+\par
+  return 0;\par
+\}\par
+56.*to infamous bugs such as memory leaks and buffer overflow, which may expose your system to hacking.\par
+*Many new languages (such as Java and C#) remove *pointer from their syntax to avoid the pitfalls of pointers, by providing automatic memory management.\par
+ *4-byte int value occupies 4 memory locations. A 32-bit system typically uses 32-bit addresses. To store a 32-bit address, 4 memory locations are required.\par
+*The address-of operator (&) can only be used on the RHS.\par
+*he indirection operator (or dereferencing operator) (*) operates on a pointer, and returns the value stored in the address kept in the pointer variable.\par
+*he indirection operator (*) can be used in both the RHS (temp = *pNumber) and the LHS (*pNumber = 99) of an assignment statement.\par
+*Dereferencing a null pointer (*p) causes an STATUS_ACCESS_VIOLATION exception\par
+*Initialize a pointer to null during declaration is a good software engineering practice.\par
+*A reference variable provides a new name to an existing variable. It is dereferenced implicitly and does not need the dereferencing operator * to retrieve the value referenced. On the other hand, a pointer variable stores an address. You can change the address value stored in a pointer. To retrieve the value pointed to by a pointer, you need to use the indirection operator *, which is known as explicit dereferencing. Reference can be treated as a const pointer. It has to be initialized during declaration, and its content cannot be changed.\par
+57.\par
+// CPP program to convert string \par
+// to char array \par
+#include <bits/stdc++.h> \par
+  \par
+using namespace std; \par
+  \par
+// driver code \par
+int main() \par
+\{ \par
+    // assigning value to string s \par
+    string s = "geeksforgeeks"; \par
+  \par
+    int n = s.length(); \par
+  \par
+    // declaring character array \par
+    char char_array[n + 1]; \par
+  \par
+    // copying the contents of the \par
+    // string to char array \par
+    strcpy(char_array, s.c_str()); \par
+  \par
+    for (int i = 0; i < n; i++) \par
+        cout << char_array[i]; \par
+  \par
+    return 0; \par
+\}\par
+58.str.erase(str.begin() + 4); \par
+59.#include <iostream> \par
+#include <string> \par
+  \par
+using namespace std; \par
+  \par
+int main() \par
+\{ \par
+    string str = "geeksforgeeks a computer science"; \par
+    char c = 'g'; \par
+  \par
+    // Find first occurrence of 'g' \par
+    size_t found = str.find(c); \par
+    if (found != string::npos) \par
+        cout << "First occurrence is " << found << endl; \par
+  \par
+    // Find next occurrence of 'g' \par
+    found = str.find(c, found+1); \par
+    if (found != string::npos) \par
+        cout << "Next occurrence is " << found << endl; \par
+  \par
+    return 0; \par
+\} \par
+60.For any two numbers to be co-prime, GCD = 1\par
+\tab Chinese remaindering (using extended Euclidean algorithm)\par
+61. string str1( "Alpha Beta Gamma Delta" );\par
+ string::size_type loc = str1.find( "Omega", 0 );\par
+ if( loc != string::npos ) \{\par
+   cout << "Found Omega at " << loc << endl;\par
+ \} else \{\par
+   cout << "Didn't find Omega" << endl;\par
+ \}\par
+62. map<int, int> mp; \par
+  \par
+    // insert elements in random order \par
+    mp.insert(\{ 2, 30 \}); \par
+    mp.insert(\{ 1, 10 \}); \par
+    mp.insert(\{ 5, 50 \}); \par
+    mp.insert(\{ 4, 40 \}); \par
+    for (auto it = mp.begin(); it != mp.end(); it++) \{ \par
+        cout << (*it).first << " " << (*it).second << endl; \par
+    \} \par
+  \par
+    // when 2 is present \par
+    auto it = mp.lower_bound(2);\par
+63.\par
+// lower_bound and upper_bound in vector \par
+#include <iostream> \par
+#include <algorithm>    // for lower_bound, upper_bound and sort \par
+#include <vector>       // for vector \par
+  \par
+using namespace std; \par
+  \par
+int main () \par
+\{ \par
+    int gfg[] = \{5,6,7,7,6,5,5,6\}; \par
+      \par
+    vector<int> v(gfg,gfg+8);    // 5 6 7 7 6 5 5 6 \par
+  \par
+    sort (v.begin(), v.end());  // 5 5 5 6 6 6 7 7 \par
+  \par
+    vector<int>::iterator lower,upper; \par
+    lower = lower_bound (v.begin(), v.end(), 6);  \par
+    upper = upper_bound (v.begin(), v.end(), 6);  \par
+  \par
+    cout << "lower_bound for 6 at position " << (lower- v.begin()) << '\\n'; \par
+    cout << "upper_bound for 6 at position " << (upper - v.begin()) << '\\n'; \par
+  \par
+    return 0; \par
+\} \par
+64.lower = lower_bound(vec.begin(), vec.end(), vec[i]);\par
+        upper = upper_bound(vec.begin(), vec.end(), vec[i]);\par
+        mp.insert(make_pair(vec[i],((upper-vec.begin())-(lower-vec.begin()))));\par
+65.mymap.insert(pair<pair<char,int> , int>(make_pair(p,q),z));\par
+it = mymap.find(make_pair(p,q)) ;\par
+it = mymap.end();\par
+it = mymap.begin();\par
+66.bool inRange(unsigned low, unsigned high, unsigned x) \{\par
+  return (low <= x && x <= high);\par
+\}\par
+67.found=str.find(str2);\par
+\par
+if (found!=string::npos)\par
+    cout << "first 'needle' found at: " << int(found) << endl;\par
+68.// Compare 3 characters from 3rd position\par
+// (or index 2) of str1 with 3 characters \par
+// from 4th position of str2. \par
+if (str1.compare(2, 3, str2, 3, 3) == 0)\par
+   cout<<"Equal";\par
+else\par
+   cout<<"Not equal"\par
+69.// string::erase\par
+#include <iostream>\par
+#include <string>\par
+\par
+int main ()\par
+\{\par
+  std::string str ("This is an example sentence.");\par
+  std::cout << str << '\\n';\par
+                                           // "This is an example sentence."\par
+  str.erase (10,8);                        //            ^^^^^^^^\par
+  std::cout << str << '\\n';\par
+                                           // "This is an sentence."\par
+  str.erase (str.begin()+9);               //           ^\par
+  std::cout << str << '\\n';\par
+                                           // "This is a sentence."\par
+  str.erase (str.begin()+5, str.end()-9);  //       ^^^^^\par
+  std::cout << str << '\\n';\par
+                                           // "This sentence."\par
+  return 0;\par
+\}\par
+70.unsigned long d1 = std::bitset<5>(s1).to_ulong();\par
+    unsigned long d2 = std::bitset<5>(s2).to_ulong();\par
+    unsigned d3 = d1^d2;\par
+    string answer = std::bitset<5>(d3).to_string();\par
+71.For a non-degenerate triangle, its sides should follow these constraints,\par
+\par
+A + B > C    and     \par
+B + C > A    and\par
+C + A > B\par
+where A, B and C are length of sides of the triangle.\par
+72.for(int i = 0; i < n; i++)\par
+  \{\par
+    itr = mp.find(vec[i]);\par
+    if(itr!=mp.end())(*itr).second++;\par
+\par
+  \}\par
+73.References vs Pointers\par
+Both references and pointers can be used to change local variables of one function inside another function. Both of them can also be used to save copying of big objects when passed as arguments to functions or returned from functions, to get efficiency gain.\par
+74.References are less powerful than pointers\par
+\par
+1) Once a reference is created, it cannot be later made to reference another object; it cannot be reseated. This is often done with pointers.\par
+2) References cannot be NULL. Pointers are often made NULL to indicate that they are not pointing to any valid thing.\par
+3) A reference must be initialized when declared. There is no such restriction with pointers\par
+\par
+Due to the above limitations, references in C++ cannot be used for implementing data structures like Linked List, Tree, etc\par
+75..shrink_to_fit() :- This function decreases the capacity of the string and makes it equal to its size. This operation is useful to save additional memory if we are sure that no further addition of characters have to be made\par
+76.it = std::find (vec.begin(), vec.end(), ser); \par
+    if (it != vec.end()) \par
+    \{ \par
+        std::cout << "Element " << ser <<" found at position : " ; \par
+        std:: cout << it - vec.begin() + 1 << "\\n" ; \par
+    \} \par
+77.When you have an assignment operator in a statement, the LHS of the operator must be something the language calls an lvalue. If the LHS of the operator does not evaluate to an lvalue, the value from the RHS cannot be assigned to the LHS.\par
+78.\par
+if (num & 1) \par
+   cout << "ODD"; \par
+else\par
+   cout << "EVEN"; \par
+79.n = n << 1;   // Multiply n with 2 \par
+n = n >> 1;   // Divide n by 2 \par
+80.a ^= b; \par
+b ^= a; \par
+a ^= b;\par
+81.for (i=0; s[i]; i++)  \par
+\{  \par
+\} \par
+// loop breaks when the character array ends.\par
+82.Instead of push_back() in STL emplace_back can be used because it is much faster and instead of allocating memory somewhere else and then appending it directly allocates memory in the container.\par
+83.C++ has inbuilt GCD function and there is no need to explicitly code it. Syntax: __gcd(x, y);\par
+84.We can create inline functions and use them without having to code them up during the contest. Examples: (a) function for sieve, (b) function for palindrome.\par
+85.We must be knowing that the maximum size of array declared inside the main function is of the order of 10^6 but if you declare array globally then you can declare its size upto 10^7\par
+86.To calculate the most significant digit of any number log can be directly used to calculate it.\par
+\par
+Suppose the number is N then \par
+Let double K = log10(N);\par
+now K = K - floor(K);\par
+int X = pow(10, K);\par
+X will be the most significant digit.\par
+87.Number of digits in N =floor(log10(N)) + 1;\par
+88.bool isPowerOfTwo (int x) \par
+\{ \par
+  /* First x in the below expression is  \par
+    for the case when x is 0 */\par
+  return x && (!(x&(x-1))); \par
+\} \par
+89.// are all of the elements positive?\par
+       all_of(first, first+n, ispositive()); \par
+\par
+      // is there at least one positive element?\par
+      any_of(first, first+n, ispositive());\par
+\par
+      // are none of the elements positive?\par
+      none_of(first, first+n, ispositive()); \par
+90.int source[5] = \{0, 12, 34, 50, 80\};\par
+int target[5];\par
+// copy 5 elements from source to target\par
+copy_n(source, 5, target);\par
+91.#include<iostream> \par
+using namespace std; \par
+int main() \par
+\{ \par
+    int a = 10; \par
+    if (a < 20 and a > 5) \par
+      cout << "Yes"; \par
+    return 0; \par
+\} \par
+92.// C++ code to demonstrate working of  \par
+// "binary" numbers \par
+#include<iostream> \par
+using namespace std; \par
+int main() \par
+\{ \par
+    auto number = 0b011; \par
+    cout << number; \par
+    return 0; \par
+\} \par
+93.It is often recommended to use scanf/printf instead of cin/cout for a fast input and output. However, you can still use cin/cout and achieve the same speed as scanf/printf by including the following two lines in your main() function:\par
+\par
+    ios_base::sync_with_stdio(false);\par
+94.It is recommended to use cout << \ldblquote\\n\rdblquote ; instead of cout << endl;. endl is slower because it forces a flushing stream, which is usually unnecessary\par
+95.#include <bits/stdc++.h>\par
+using namespace std;\par
+\par
+int main()\par
+\{\par
+    ios_base::sync_with_stdio(false);\par
+    cin.tie(NULL);\par
+    return 0;\par
+\}\par
+96.#define watch(x) cout << (#x) << " is " << (x) << endl\par
+97.auto a = 100; // a will become 'int'\par
+auto b = 1LL; // b will become 'long long'\par
+auto c = 1.0; // c will become 'double'\par
+auto d = "variable"; // d will become 'string\par
+98.typedef long long ll;\par
+typedef pair w;\par
+typedef vector va;\par
+typedef vector vb;\par
+typedef vector vc;\par
+99.constant < log n < n < n log n < n^2 < n^3 < 2^n < n!\par
+100.\par
+*KISS: Keep it Simple and Smart, keeping all versions working and stepwise refinement of code\par
+*To summarise, these are some key points:\par
+\par
+Read all the problems, select the problem in order : easy to tough (if everyone is solving a selected problem, do have a look at it)\par
+Sketch the algorithms, complexity, conditions, data structures and tricky details\par
+Brainstorm other possible algorithms (if any) \f1\endash  then pick the stupidest that works\par
+Do all the Math and select the best algorithm.\par
+Code it, as fast as possible, and it must be correct.\par
+Try to break the algorithm \endash  look out for boundary test cases.\par
+The main mantra to succeed a problem is to keep calm, manage your time and have a strategic approach, rest your experience and practice plays the part.\par
+\f0\lang1033 101.\par
+*Set is implemented as balanced tree structure that is why it is possible to maintain an order between the elements (by specific tree traversal). Time complexity of set operations is O(Log n) while for unordered_set, it is O(1)\par
+\lang9 *The Unordered_set allows only unique keys, for duplicate keys unordered_multiset should be used.\par
+102.Quick sort is an internal algorithm which is based on divide and conquer strategy. In this:\par
+\par
+The array of elements is divided into parts repeatedly until it is not possible to divide it further.\par
+It is also known as \ldblquote partition exchange sort\rdblquote .\par
+It uses a key element (pivot) for partitioning the elements.\par
+One left partition contains all those elements that are smaller than the pivot and one right partition contains all those elements which are greater than the key element.\par
+103.Merge sort is an external algorithm and based on divide and conquer strategy. In this:\par
+\par
+The elements are split into two sub-arrays (n/2) again and again until only one element is left./li>\par
+Merge sort uses additional storage for sorting the auxiliary array.\par
+Merge sort uses three arrays where two are used for storing each half, and the third external one is used to store the final sorted list by merging other two and each array is then sorted recursively.\par
+At last, the all sub arrays are merged to make it \lquote n\rquote  element size of the array.\par
+104.\par
+*for loop template:\par
+for (initialization expr; test expr; update expr)\par
+\{    \par
+     // body of the loop\par
+     // statements we want to execute\par
+\}\par
+105. bitwise NOT does to a number is ~x = (-1 * (x+1))\par
+106.std::string s = "10";\par
+\par
+\tab try\par
+\tab\{\par
+\tab\tab int i = std::stoi(s);\par
+\tab\tab std::cout << i << '\\n';\par
+\tab\}\par
+\tab catch (std::invalid_argument const &e)\par
+\tab\{\par
+\tab\tab std::cout << "Bad input: std::invalid_argument thrown" << '\\n';\par
+\tab\}\par
+\tab catch (std::out_of_range const &e)\par
+\tab\{\par
+\tab\tab std::cout << "Integer overflow: std::out_of_range thrown" << '\\n';\par
+\tab\}\par
+107. lower_bound(start_ptr, end_ptr, num) : Returns pointer to \ldblquote position of num\rdblquote  if container contains 1 occurrence of num. Returns pointer to \ldblquote first position of num\rdblquote  if container contains multiple occurrence of num. Returns pointer to \ldblquote position of next higher number than num\rdblquote  if container does not contain occurrence of num. Subtracting the pointer to 1st position i.e \ldblquote vect.begin()\rdblquote  returns the actual index.\par
+108.. upper_bound(start_ptr, end_ptr, num) : Returns pointer to \ldblquote position of next higher number than num\rdblquote  if container contains 1 occurrence of num. Returns pointer to \ldblquote first position of next higher number than last occurrence of num\rdblquote  if container contains multiple occurrence of num. Returns pointer to \ldblquote position of next higher number than num\rdblquote  if container does not contain occurrence of num. Subtracting the pointer to 1st position i.e \ldblquote vect.begin()\rdblquote  returns the actual index.\par
+109.Counting set bits in a binary number.\par
+int countSetBits(int n)\{\par
+int count = 0;\par
+    while (n)\par
+    \{\par
+      n &= (n-1) ;\par
+      count++;\par
+    \}\par
+    return count;\par
+\}\par
+ \par
+//Using inbuilt function\par
+int numberOfSetBits =  __builtin_popcount (n);\par
+110.How to check if a given number is a power of two or not in one line.\par
+bool isPowerOfTwo(int n)\{\par
+   return n && (!(n&(n-1)));\par
+\}\par
+111.To check if ith bit is set or not in binary representation of n\par
+bool isSet(int n,int i)\{\par
+   return n & (1 << i); \par
+\}\par
+112.long is equivalent to long int , just as short is equivalent to short int . A long int is a signed integral type that is at least 32 bits, while a long long or long long int is a signed integral type is at least 64 bits. This doesn't necessarily mean that a long long is wider than a long .\par
+113.1L : It is a long integer literal.\par
+\par
+Integer literals have a type of int by default; the L suffix gives it a type of long (Note that if the value cannot be represented by an int, then the literal will have a type of long even without the suffix).\par
+\par
+42 is an int. If you want it to be a long, you need to add the L (giving 42L). There are many reasons that you might want a long explicitly: you might do it to select a particular function overload or to ensure a template is instantiated with long instead of int. You might use it to ensure some integer expression is evaluated with long precision instead of int precision. INT_MAX + 1 will overflow. If long has greater range than int, INT_MAX + 1L will not overflow\par
+114.-1e9 is -1000000000.0 ; the minus sign applies to the number itself. The e (or E ) means "times 10-to-the", so 1e9 is "one times ten to the ninth power", and 1e-9 means "one times ten to the negative ninth power"\par
+115.Cube\par
+Solve for surface area\par
+A=6a^2\par
+116.Use std::unique and then verify that the distance between the begin iterator of the map and the end iterator returned by std::unique is 1.\par
+117.\par
+Binary Tree | Set 2 (Properties):\par
+*The maximum number of nodes at level \lquote l\rquote  of a binary tree is 2l-1.\par
+*Maximum number of nodes in a binary tree of height \lquote h\rquote  is 2h \f1\endash  1.\par
+\f0\lang1033 *In a Binary Tree with N nodes, minimum possible height or minimum number of levels is  ? Log2(N+1) ?\par
+*A Binary Tree with L leaves has at least   ? Log2L ? + 1   levels\par
+*In Binary tree where every node has 0 or 2 children, number of leaf nodes is always one more than nodes with two children.\par
+118.#define INF (int)1e9 is used instead of INT_MAX so that operations like INF + INF are possible and don't become negative (out of range).\par
+119.*Tree template\par
+#include <bits/stdc++.h>\par
+\par
+using namespace std;\par
+\par
+class Node \{\par
+    public:\par
+        int data;\par
+        Node *left;\par
+        Node *right;\par
+        Node(int d) \{\par
+            data = d;\par
+            left = NULL;\par
+            right = NULL;\par
+        \}\par
+\};\par
+\par
+class Solution \{\par
+    public:\par
+  \tab\tab Node* insert(Node* root, int data) \{\par
+            if(root == NULL) \{\par
+                return new Node(data);\par
+            \} else \{\par
+                Node* cur;\par
+                if(data <= root->data) \{\par
+                    cur = insert(root->left, data);\par
+                    root->left = cur;\par
+                \} else \{\par
+                    cur = insert(root->right, data);\par
+                    root->right = cur;\par
+               \}\par
+\par
+               return root;\par
+           \}\par
+        \}\par
+\};\par
+int main() \{\par
+  \par
+    Solution myTree;\par
+    Node* root = NULL;\par
+    \par
+    int t;\par
+    int data;\par
+\par
+    std::cin >> t;\par
+\par
+    while(t-- > 0) \{\par
+        std::cin >> data;\par
+        root = myTree.insert(root, data);\par
+    \}\par
+return 0;\par
+\}\par
+120.ifstream bmifile;\par
+\tab\tab bmifile.open(bmi_user_in);\par
+\tab\tab cout<<"You entered: "<<bmi_user_in<<endl;\par
+\par
+\tab\tab while (!bmifile.eof()) \{\par
+\tab\tab bmifile>>name>>weight1>>height1;\par
+121.\par
+Assertions are statements used to test assumptions made by programmer. For example, we may use assertion to check if pointer returned by malloc() is NULL or not.\par
+If expression evaluates to 0 (false), then the expression, sourcecode filename, and line number are sent to the standard error, and then abort() function is called.\par
+122.The standard library includes the ordered and the unordered map (std::map and std::unordered_map) containers. In an ordered map the elements are sorted by the key, insert and access is in O(log n). Usually the standard library internally uses red black trees for ordered maps. But this is just an implementation detail. In an unordered map insert and access is in O(1). It is just another name for a hashtable.\par
+\par
+#include <map>\par
+#include <iostream>\par
+#include <cassert>\par
+\par
+int main(int argc, char **argv)\par
+\{\par
+  std::map<std::string, int> m;\par
+  m["hello"] = 23;\par
+  // check if key is present\par
+  if (m.find("world") != m.end())\par
+    std::cout << "map contains key world!\\n";\par
+  // retrieve\par
+  std::cout << m["hello"] << '\\n';\par
+  std::map<std::string, int>::iterator i = m.find("hello");\par
+  assert(i != m.end());\par
+  std::cout << "Key: " << i->first << " Value: " << i->second << '\\n';\par
+  return 0;\par
+\}\par
+123.\lang9\par
+}
+ 
